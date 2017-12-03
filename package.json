@@ -1,0 +1,20 @@
+{
+  "name": "music_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blink.js",
+  "dependencies": {
+    "audio-play": "^2.2.0",
+    "audio-loader": "^1.0.3",
+    "johnny-five": "^0.11.7",
+    "mplayer": "^2.1.0",
+    "node-mplayer": "^0.0.6",
+    "simple-mplayer": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
