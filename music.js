@@ -35,9 +35,9 @@ board.on("ready", function() {
   var led2 = new five.Led(12);
   var led3 = new five.Led(11);
 
-  var led4 = new five.Led(6);
-  var led5 = new five.Led(5);
-  var led6 = new five.Led(4);
+  var led12 = new five.Led(10);
+  var led22 = new five.Led(9);
+  var led32 = new five.Led(8);
 
   potentiometer1 = new five.Sensor({
     pin: "A0",
@@ -74,9 +74,9 @@ board.on("ready", function() {
     led1 : led1,
     led2 : led2,
     led3 : led3,
-    led4 : led4,
-    led5 : led5,
-    led6 : led6,
+    led12 : led12,
+    led22 : led22,
+    led32 : led32,
   });
 
 
@@ -96,7 +96,28 @@ board.on("ready", function() {
     // console.log("Channel Selection",this.scaled);
     //channel
     channel = Math.round(this.scaled);
-
+    switch(channel) {
+      case 1:
+        led1.on();
+        led2.off();
+        led3.off();
+        break;
+      case 2:
+        led1.off();
+        led2.on();
+        led3.off():
+        break;
+      case 3:
+        led1.off();
+        led2.off();
+        led3.on();
+        break;
+      default:
+        led1.off();
+        led2.off();
+        led3.off();
+        break;
+    }
   });
 
  potentiometer4.scale([0,5]).on("data", function() {
@@ -110,7 +131,20 @@ board.on("ready", function() {
   	}
   	//console.log("FORCE", this.scaled);
     	//console.log("Volume:",volume," Frequency:",frequency," Channel:",channel);
-    
+    ms = 1024 - frequency;
+    switch(channel) {
+      case 1:
+        led12.blink(ms)
+        break;
+      case 2:
+        led22.blink(ms)
+        break;
+      case 3:
+        led32.blink(ms)
+        break;
+      default:
+        break; 
+    }
 
   });
 
