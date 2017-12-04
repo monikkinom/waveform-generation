@@ -11,9 +11,12 @@ shape = 0;
 
 shapes = ['sine.ck','traingle.ck','square.ck','saw.ck','pulse.ck','phasor.ck'];
 
+//run the server with chuck --loop on another tab and then execute shell commands from this script.
+
 cmd.run('chuck + ./chuck/sine.ck:1000:0.0');
 cmd.run('chuck + ./chuck/sine.ck:1000:0.0');
 cmd.run('chuck + ./chuck/sine.ck:1000:0.0');
+
 
 board.on("ready", function() {
 
